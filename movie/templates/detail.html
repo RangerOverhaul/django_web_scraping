@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar</title>
+</head>
+<body>
+    <h1> {{ film.title }}</h1>
+    <h2> {{  film.id  }}</h2>
+    <h3> {{ film.year}} </h3>
+    <h4> {{film.critics_consensus}} </h4>
+    <hr>
+    <label> <strong> Editor </strong></label>
+    <form action="" method="post" class="box">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Editar">
+    </form>
+         <button onclick="location.href='{% url 'movie:delete' film.id %}'" value="delete"> Eliminar </button>
+    <br>
+    {% if submitbutton  %}
+        <button onclick="location.href='{% url 'movie:moveedit' film.year %}'" value="CRUD"> Nuevo listado de peliculas </button>
+    {% endif %}
+</body>
+</html>

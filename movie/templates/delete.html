@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Delete</title>
+</head>
+<body>
+<h1> Pelicula {{ mov }} {{ year }} eliminada </h1>
+<button onclick="location.href='{% url 'movie:moveedit' year %}'" value="go"> Nuevo listado de peliculas </button>
+</body>
+</html>

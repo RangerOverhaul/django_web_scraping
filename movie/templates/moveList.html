@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <title>Page</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+    <button onclick="location.href='{% url 'movie:edit' year %}'" value="CRUD"> CURD </button>
+    <div class="page-header">
+            <h3>top 100 best movies in {{ year }} <strong>By Rottentomatoes</strong> </h3>
+            {% if film %}
+                <ol>
+                    {% for c in film %}
+                    <li> <strong>Movie:</strong>  {{ c.title }}  ,<strong>reviews: </strong>  {{ c.critics_consensus }}</li>
+                    <br>
+                    {% endfor %}
+                </ol>
+            {% else %}
+                <p>No Movies are available.</p>
+             {% endif %}
+
+    </div>
+    </body>
+</html>
